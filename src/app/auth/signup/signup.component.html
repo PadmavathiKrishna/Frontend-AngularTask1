@@ -1,0 +1,60 @@
+
+<div class="SignupPage">
+    <div class="container">
+           <div class="title">
+            <p class="log">sign up</p></div>
+
+        <div class="words">Already a Member? <span><a routerLink="/auth/login">Login</a></span></div>
+
+     <form [formGroup]="signupform" >
+   
+        <div class="middle">
+
+        
+        <div class="form-group">
+        
+        <label for="name">Email:</label>
+        <input type="text" class="form-control" placeholder="Email" formControlName="email"  required>
+        
+        <span *ngIf="signupform.controls['email'].errors?.['required'] && signupform.controls['email'].touched "  class="email_error" ><mat-icon class="icon">info</mat-icon><span class="symbol">&#42; </span> Email is required</span>
+        <span *ngIf="signupform.controls['email'].errors?.['pattern'] && signupform.controls['email'].touched "  class="email_error" > <mat-icon class="icon">info</mat-icon><span class="symbol">&#42; </span>It should be in Email Format</span>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Password:</label>   
+        <input matInput class="form-control" [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName = "password" required>
+        
+        <button class="eyeicon" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        
+          <span *ngIf="signupform.controls['password'].errors?.['required'] && signupform.controls['password'].touched"  class="pass_error"><span class="symbol">&#42; </span>Password is required</span>
+          <span *ngIf="signupform.controls['password'].errors?.['pattern'] && signupform.controls['password'].touched"  class="pass_error"><span class="symbol">&#42; </span>
+          <hr class="passline">Password must contain at least: <br>
+           8 characters.<br>
+           One Uppercase and Lowercase.<br>
+           One Special character and number.</span> 
+        
+
+        </div>
+
+        <div class="form-group">  
+        <input type="checkbox" class="check" name="condition" formControlName="acceptTerms"  value="condition">
+        <label> I accept the Terms of Use & Privacy Policy</label>
+
+        <!-- <span *ngIf="signupform.controls['acceptTerms'].errors?.['required']" class="accept_error" >Accept Terms is required 
+        </span> -->
+
+        </div> 
+
+
+        <div class="form-group">
+        <button [disabled]="signupform.invalid" (click)="onSubmit()" class="form-control" id="btn" value="Sign up" type="submit">SignUp</button>
+
+        </div>
+   </div>
+
+     </form>
+  
+ </div>
+</div>

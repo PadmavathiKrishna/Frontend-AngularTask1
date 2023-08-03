@@ -1,0 +1,43 @@
+<div class="finalpage">
+<div class="container">
+  <div class="title">Basic Details Table</div>
+<table>
+  <thead>
+    <tr class="head">
+
+      <th>Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>FullName</th>
+      <th>DOB</th>
+      <th>Gender</th>
+      <th>Qualification</th>
+      <th>PhoneNo</th>
+      <th>Email</th>
+      <th>Religion</th>
+     
+    </tr>
+</thead>
+    <tbody>
+    <tr class="row1" *ngFor="let table of tablelist">
+      <th> {{table.id}} </th>
+      <td> {{table.firstname}} </td>
+      <td> {{table.lastname}} </td>
+      <td> {{table.fullname}} </td>
+      <td> {{table.dob}} </td>
+      <td> {{table.gender}} </td>
+      <td> {{table.qualification}} </td>
+      <td> {{table.phoneno}} </td>
+      <td> {{table.email}} </td>
+      <td> {{table.religion}} </td>
+
+    </tr>
+    
+    
+  </table>
+
+  <button class="btn" type="submit" (click) = onClick()>Submit</button>
+
+</div>
+
+</div>

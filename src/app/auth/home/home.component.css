@@ -1,0 +1,67 @@
+.homepage{
+    background-image: url("../../../assets/Images/beachimage.jpg");
+   
+    height: 90%;
+    
+    
+   
+    
+}
+
+#menu {
+    
+    list-style-type: none;
+}
+.menu-bar{
+    
+    text-decoration: none;
+    color: white;
+    float: right;
+    padding-right: 30px;             
+}
+.menu-bar:hover{
+    color: orange;
+}
+li{
+    
+    margin: 20px;
+    float: right;
+}
+.content{
+    padding:90px 70px 10px 60px ;
+}
+#content-h{
+    font-family: 'poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    color: blue;
+}
+#content-p{
+    color: rgb(180, 176, 176);
+    margin-top: 40px;
+}
+#content-b{
+    padding: 10px 20px;
+    background-color: orangered;
+    color: white;
+    border: none;
+}
+#h2{
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+.lastline {
+
+    color:black;
+    margin-bottom: 20px;
+
+}
+
+#end{
+    margin-bottom: 20px;
+    color:gray;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+}

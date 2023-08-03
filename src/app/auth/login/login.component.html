@@ -1,0 +1,49 @@
+
+<div class=" LoginPage">
+<div class="container">
+    <div class="title">
+      <p class="log">Log-in</p>
+    </div>
+    <div class="words">New to this site? <span><a routerLink="/auth/signup">SignUp</a></span></div>
+
+    <form [formGroup] = "loginform" >
+    
+    <div class="middle">
+      
+      <div class="form-group">
+      <label for="name">Email:</label>
+      <input class="form-control" type="text" placeholder="example@mail.com" formControlName="email" required>
+      <span  *ngIf="(loginform.controls['email'].invalid || submitted) && loginform.controls['email'].touched"  class="email_error" ><mat-icon class="icon">info</mat-icon><span class="symbol">&#42; </span> Email is required</span>
+     
+    
+    </div>
+
+
+      <div class="form-group">
+      <label for="name">Password:</label>
+      <input class="form-control" [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+      
+      
+    <button class="eyeicon" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+      
+    
+
+      <span  *ngIf="(loginform.controls['password'].invalid || submitted) && loginform.controls['password'].touched" class="pass_error" ><span >&#42; </span>Password is required</span>
+      </div>
+      
+      
+      <div class="form-group">
+      <button  [disabled]="loginform.invalid" (click)="onSubmit()" class="form-control" id="btn" type="submit">Login</button>
+      </div>
+      <!-- [disabled]="loginform.invalid" -->
+    </div>
+  </form>
+    
+    <div class="footer">
+      <a routerLink="/auth/forgetpassword" >Forgot Password</a> 
+    </div>
+</div>
+</div>
+

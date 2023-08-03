@@ -1,0 +1,73 @@
+{
+    "data":{
+        "tablelist":[
+            {
+                    "id":1,
+                    "firstname":"Karthi",
+                    "lastname":"A",
+                    "fullname":"Karthi A",
+                    "dob":"01/04/1994",
+                    "gender":"Male",
+                    "qualification":"UG",
+                    "phoneno": 8437383746,
+                    "email":"karthi45@gmail.com",
+                    "religion":"hindu"
+                },
+                {
+                    "id":2,
+                    "firstname":"Priya",
+                    "lastname":"M",
+                    "fullname":"Priya M",
+                    "dob":"06/07/1999",
+                    "gender":"Female",
+                    "qualification":"PG",
+                    "phoneno":8439362346,
+                    "email":"priya78@gmail.com",
+                    "religion":"hindu"
+                    
+                },
+                {
+                    "id":3,
+                    "firstname":"Vimala",
+                    "lastname":"L",
+                    "fullname":"Vimala L",
+                    "dob":"08/01/1998",
+                    "gender":"Female",
+                    "qualification":"10th",
+                    "phoneno":9845783746,
+                    "email":"vimala93@gmail.com",
+                    "religion":"hindu"
+                    
+                },
+                {
+                    "id":4,
+                    "firstname":"Catherin",
+                    "lastname":"A",
+                    "fullname":"Catherin A",
+                    "dob":"09/08/1995",
+                    "gender":"Female",
+                    "qualification":"UG",
+                    "phoneno":8029783740,
+                    "email":"catherin01@gmail.com",
+                    "religion":"Christian"
+                    
+                },
+                {
+                    "id":5,
+                    "firstname":"Assaruthin",
+                    "lastname":"B",
+                    "fullname":"Assaruthin B",
+                    "dob":"03/08/1999",
+                    "gender":"Male",
+                    "qualification":"PG",
+                    "phoneno":8437094883,
+                    "email":"assaruthin36@gmail.com",
+                    "religion":"Muslim"
+                    
+                }
+        
+             ]
+    }
+  
+}
+    

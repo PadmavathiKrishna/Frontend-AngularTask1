@@ -1,0 +1,156 @@
+<div class="FormPage">
+    <div class="container">
+        <div class="title">
+            <p class="Register">Registration Form</p></div>
+    
+            <form [formGroup]="profileform" class="content">
+    
+    <div class="line">
+            
+            <mat-form-field class="box">
+                <mat-label>Title</mat-label><mat-select>
+                  <mat-option value="one">Mrs</mat-option>
+                  <mat-option value="two">Miss</mat-option>
+                  <mat-option value="three">Mr</mat-option>
+                  <mat-option value="Four">Dr</mat-option></mat-select>
+            </mat-form-field>
+    
+        <mat-form-field class="box"><mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" class="name" formControlName="firstName" required>	<mat-icon class="icon">info</mat-icon>
+            <mat-error *ngIf="profileform.controls['firstName'].errors?.['required'] && profileform.controls['firstName'].errors?.touched" class="error" >First name is required.</mat-error>
+        </mat-form-field>
+            <mat-form-field class="box"><mat-label>Middle Name</mat-label>
+                <input matInput placeholder="Middle Name" class="name"><mat-icon class="icon">info</mat-icon></mat-form-field>
+                <mat-form-field class="box"><mat-label>Last Name</mat-label>
+                 <input matInput placeholder="Last Name" class="name" formControlName="lastName"required><mat-icon class="icon">info</mat-icon>
+                <mat-error *ngIf="profileform.controls['lastName'].errors?.['required'] && profileform.controls['lastName'].errors?.touched" class="error" >Last name is required.</mat-error>
+            </mat-form-field>
+        </div>
+    
+    <div class="line">  
+         <mat-form-field class="box"><mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name" class="name" formControlName="fullName" required><mat-icon class="icon">info</mat-icon>
+            <mat-error *ngIf="profileform.controls['fullName'].errors?.['required'] && profileform.controls['fullName'].errors?.touched" class="error" >Full name is required.</mat-error>
+        </mat-form-field>
+    </div> 
+    
+    <div class="line">
+           <mat-form-field class="box"><mat-label>Father Name</mat-label>
+            <input matInput  class="name"><mat-icon class="icon">info</mat-icon>
+           </mat-form-field>
+           <mat-form-field class="box"><mat-label>Mother Name</mat-label>
+            <input matInput  class="name"><mat-icon class="icon">info</mat-icon>
+        </mat-form-field>
+    </div>
+    
+    <div class="line">
+        <mat-form-field class="box">
+            <mat-label>Choose a date</mat-label><input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="profileform.controls['dob'].errors?.['required'] && profileform.controls['dob'].errors?.touched" class="error" >Date of birth is required.</mat-error>
+        </mat-form-field>
+    </div>
+           
+            <div class="gender">
+              <label style="font-size: 25px; font-weight: lighter;">Gender: </label>
+              <mat-radio-group style="font-weight: lighter; font-size: 20px;" formControlName="gender">
+                <mat-radio-button value="auto">Male</mat-radio-button>
+                <mat-radio-button value="always">Female</mat-radio-button>
+                <mat-radio-button value="auto">Others</mat-radio-button></mat-radio-group>
+                <mat-error *ngIf="profileform.controls['gender'].errors?.['required'] && profileform.controls['gender'].errors?.touched" class="error" >Gender is required.</mat-error>
+            </div>
+           
+     <div class="line">
+    
+            <mat-form-field class="box">
+                <mat-label>Qualifications</mat-label>
+                <mat-select multiple  formControlName="qualification">
+                      <mat-option value="SSLC">SSLC</mat-option>
+                      <mat-option value="HSC">HSC</mat-option>
+                      <mat-option value="UG">UG</mat-option>
+                      <mat-option value="PG">PG</mat-option>
+                      <mat-option value="Working">Working</mat-option>
+                      <mat-option value="Bussiness">Bussiness</mat-option>
+                </mat-select>
+                <mat-error *ngIf="profileform.controls['qualification'].errors?.['required'] && profileform.controls['qualification'].errors?.touched" class="error" >Qualification is required.</mat-error>
+            </mat-form-field>
+           
+        </div>
+    
+    
+      <div class="line">
+    
+            <mat-form-field class="box">
+                <mat-label for="phone">Phone number:</mat-label>
+                <input matInput  type="tel" id="phone" placeholder="123-45-678" formControlName="phone"  required>
+                <mat-icon class="icon">phone</mat-icon>
+                <mat-error *ngIf="profileform.controls['phone'].errors?.['required'] && profileform.controls['phone'].errors?.touched" class="error" >Phone number is required.</mat-error>
+                <mat-error *ngIf="profileform.controls['phone'].errors?.['pattern'] && profileform.controls['phone'].errors?.touched" class="error" >Enter in phone format.</mat-error> 
+            </mat-form-field>
+            <mat-form-field class="box"><mat-label>Email</mat-label>
+                <input matInput placeholder="pat@example.com" formControlName="email" required>
+                <mat-icon class="icon">email</mat-icon>
+                <mat-error *ngIf="profileform.controls['email'].errors?.['required'] && profileform.controls['email'].errors?.touched" class="error" >Phone number is required.</mat-error>
+                <mat-error *ngIf="profileform.controls['email'].errors?.['pattern'] && profileform.controls['email'].errors?.touched" class="error" >Enter in email format.</mat-error> 
+            </mat-form-field>
+    
+        <mat-form-field class="box">
+            <mat-label>Religion</mat-label><select matNativeControl formControlName="religion" required>
+            <option value="Hindu">Hindu</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Christian">Christian</option>
+            <option value="Others">Others</option></select>
+            <mat-error *ngIf="profileform.controls['religion'].errors?.['required'] && profileform.controls['religion'].errors?.touched" class="error" >Religion is required.</mat-error>
+        </mat-form-field>
+    </div>
+    
+    <div class="line">
+        <mat-form-field class="box"><mat-label>Address Line1</mat-label>
+            <input matInput placeholder="Address Line1" class="Add" formControlName="address1" required>
+            <mat-error *ngIf="profileform.controls['address1'].errors?.['required'] && profileform.controls['address1'].errors?.touched" class="error" >Address is required.</mat-error></mat-form-field>
+        <mat-form-field class="box"><mat-label>Address Line2</mat-label>
+            <input matInput placeholder="Address Line2" class="Add" formControlName="address2" required>
+            <mat-error *ngIf="profileform.controls['address2'].errors?.['required'] && profileform.controls['address2'].errors?.touched" class="error" >Address is required.</mat-error></mat-form-field>
+        <mat-form-field class="box"><mat-label>city</mat-label>
+            <input matInput placeholder="city" class="Add" formControlName="city" required>
+            <mat-error *ngIf="profileform.controls['city'].errors?.['required'] && profileform.controls['city'].errors?.touched" class="error" >Address is required.</mat-error></mat-form-field>
+    </div>
+    
+    <div class="line">
+        <mat-form-field class="box"><mat-label>State/Province</mat-label>
+            <input matInput placeholder="State/Province" class="Add" formControlName="state" required>
+            <mat-error *ngIf="profileform.controls['state'].errors?.['required'] && profileform.controls['state'].errors?.touched" class="error" >Address is required.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="box"><mat-label>Postal/Zip Code</mat-label>
+            <input matInput placeholder="Postal/Zip Code" class="Add" formControlName="pincode" required>
+            <mat-error *ngIf="profileform.controls['pincode'].errors?.['required'] && profileform.controls['pincode'].errors?.touched" class="error" >Address is required.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="box"><mat-label>Country</mat-label>
+            <input matInput placeholder="Country" class="Add" formControlName="country" required>
+            <mat-error *ngIf="profileform.controls['country'].errors?.['required'] && profileform.controls['country'].errors?.touched" class="error" >Address is required.</mat-error>
+        </mat-form-field>
+    </div>
+    
+    
+    <div class="line">
+    
+        <mat-label  style="font-size: 20px; font-weight: lighter; margin-left: 40px;" >Photo (not compulsory): </mat-label> 
+        <input class="box" type="file" id="myfile" name="myfile">
+    </div>
+      
+    
+    
+    <!-- <input type="file" class="file-upload" onchange="console.log(event.target.files)">  -->
+    
+    
+        <button (click)="onSubmit()" type="submit"  class="btn" mat-button >Register</button>
+    
+    
+    </form>
+    
+    
+    </div>
+    
+    </div>
